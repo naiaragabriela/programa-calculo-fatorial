@@ -14,7 +14,8 @@ int fatorial(int valor)
     }
     else
     {
-        Console.WriteLine($"{valor}! = {valor} * {fatorial(valor - 1)} ");
-        return (valor * fatorial(valor - 1));
+        int aux = valor - 1;
+        Console.WriteLine($"{valor}! = {valor} * {aux}!");
+        return  valor * fatorial(aux);
     }
 }
