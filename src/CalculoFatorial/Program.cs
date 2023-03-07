@@ -3,10 +3,10 @@
 Console.Write("Informe um número: ");
 numero = int.Parse(Console.ReadLine());
 
-resposta = fatorial(numero);
+resposta = Fatorial(numero);
 Console.WriteLine($"O resultado do fatorial de {numero} é: {resposta}");
 
-int fatorial(int valor)
+int Fatorial(int valor)
 {
     if (valor == 0)
     {
@@ -16,6 +16,6 @@ int fatorial(int valor)
     {
         int aux = valor - 1;
         Console.WriteLine($"{valor}! = {valor} * {aux}!");
-        return  valor * fatorial(aux);
+        return  valor * Fatorial(aux);
     }
 }
