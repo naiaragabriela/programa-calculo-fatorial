@@ -1,29 +1,20 @@
-﻿int anterior, numero, fatorial;
+﻿int numero, resposta;
 
-int BuscaNumero()
+Console.Write("Informe um número: ");
+numero = int.Parse(Console.ReadLine());
+
+resposta = fatorial(numero);
+Console.WriteLine($"O resultado do fatorial de {numero} é: {resposta}");
+
+int fatorial(int valor)
 {
-    Console.Write("Informe um número: ");
-    return int.Parse(Console.ReadLine());
-}
-
-numero = BuscaNumero();
-anterior = (numero - 1);
-fatorial = 1;
-
-void ResultadoFatorial()
-{
-    for (int i = numero; i>1; i--)
+    if (valor == 0)
     {
-        fatorial *= numero;
-        Console.WriteLine($"{numero}! = {numero} * {anterior}!");
-        numero = anterior;
-        anterior = anterior - 1;
-
-        if(numero == 1 || numero == 0)
-        {
-            Console.WriteLine($"{numero}! = 1");
-        }
+        return 1;
     }
-    Console.WriteLine($"O resultado do fatorial é: {fatorial}");
+    else
+    {
+        Console.WriteLine($"{valor}! = {valor} * {fatorial(valor - 1)} ");
+        return (valor * fatorial(valor - 1));
+    }
 }
-ResultadoFatorial();
